@@ -7,7 +7,7 @@ A [Claude Code](https://claude.com/claude-code) mod for **joint sessions**: when
 - **Hand off tasks.** Send a task with its context to someone, who starts it in their Claude.
 - Plus the basics: groups, direct chats, files (up to 4 MB) and links, and a list of a chat's files, links and contexts.
 
-> **Status:** early prototype. The pane UI works with sample data; the real connection is not built yet. See the [MVP spec](docs/MVP.md) (in Portuguese) for the plan.
+> **Status:** early prototype. Sign-in with GitHub, groups, direct chats and text messages work over GitHub; files and the joint-session features are not built yet. See the [MVP spec](docs/MVP.md) (in Portuguese) for the plan.
 
 ## How it works
 
@@ -25,12 +25,32 @@ The mod polls for new messages: every 20 s for the open chat, every 5 min for th
 - Claude Code, in the terminal or the desktop app. The mobile app is not supported.
 - `gh` installed and signed in (`gh auth status`) with the `repo` scope.
 
+## Install
+
+In Claude Code (terminal or desktop app):
+
+```
+/plugin install team-chat --marketplace AlecsFarias/claude-team-chat
+```
+
+On versions older than 2.1.275, add the marketplace first:
+
+```
+/plugin marketplace add AlecsFarias/claude-team-chat
+/plugin install team-chat@claude-team-chat
+```
+
+Then run `/chat`, check that the GitHub account shown is yours and press "Começar". Invitations to chats are accepted on their own within 5 minutes.
+
 ## Development
 
 The mod lives in [`mod/`](mod/). It is a Claude Code plugin of function hooks:
 
 - `hooks/register.tsx`: state, actions and the `/chat` command.
 - `hooks/views.tsx`: the screens.
+- `hooks/github.ts`: finding `gh`, the sign-in check and `gh api` calls.
+- `hooks/chats.ts`: chats, messages, members and invitations on GitHub.
+- `hooks/sync.ts`: polling and the actions that write.
 - `types/index.d.ts`: the state contract.
 
 Load it in a session and open the pane:
