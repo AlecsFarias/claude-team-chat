@@ -5,7 +5,7 @@ description: How to land a change in the Claude Team Chat repo - branch, checks,
 
 # Shipping a change in Claude Team Chat
 
-One git repo at the project root, default branch `main`. The GitHub repository is private; keep it that way.
+One git repo at the project root, default branch `main`, public on GitHub as `AlecsFarias/claude-team-chat` (open source): everything committed is visible to anyone.
 
 1. **Sync first:** `git fetch && git switch main && git pull --ff-only` (once a remote exists).
 2. **Branch** with an English name: `feat/<short-topic>`, `fix/<short-topic>`, `docs/<short-topic>`.

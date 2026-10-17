@@ -22,7 +22,7 @@ UI prototype only, with sample data and no real connection. Next is phase 2 of `
 - Files are capped at 4 MiB (`$.fs.read`); `$.fs.write` writes text only.
 - Every change keeps `plugin validate`, `plugin test` and `tsc` green (see the `team-chat-dev` skill).
 - Git artifacts (commit messages, PR titles and bodies, branch names) in English. No AI attribution anywhere: no `Co-Authored-By`, no "Generated with", no mention of Claude.
-- Keep the GitHub repository private.
+- The repository is public and open source (https://github.com/AlecsFarias/claude-team-chat): never commit tokens, personal data, machine-specific paths or anything from a real chat.
 
 ## Skills
 
