@@ -1,0 +1,11 @@
+{
+  "name": "claude-team-chat",
+  "owner": { "name": "AlecsFarias" },
+  "plugins": [
+    {
+      "name": "team-chat",
+      "source": "./mod",
+      "description": "Chat pane between the Claudes of people working together, with GitHub as the backend"
+    }
+  ]
+}

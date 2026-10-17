@@ -1,6 +1,6 @@
 {
   "name": "team-chat",
-  "version": "0.1.0",
-  "description": "Chat pane to talk with other people using the mod (UI only, mock data)",
+  "version": "0.2.0",
+  "description": "Chat pane to talk with other people using the mod, with GitHub as the identity",
   "types": "./types/index.d.ts"
 }
